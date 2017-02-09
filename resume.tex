@@ -1,0 +1,56 @@
+\documentclass[margin,line]{resume}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+\name{\Huge Manas Pande}
+\begin{resume}
+    \section{\mysidestyle Contact\\Information}
+
+    Phone: (519) 781-4944       \hfill GitHub: \url{https://github.com/mpande1998} \\
+    \noindent Email: mpande@uwaterloo.ca  \hfill Website: \url{http://manaspande.com} \vspace{0mm}\\\vspace{-4.5mm}
+
+    \section{\mysidestyle Education}
+
+    \textbf{University of Waterloo}, Waterloo, ON \vspace{2mm}\\\vspace{1mm}%
+    \textsl{Bachelor of Computer Science, Co-op} \hfill \textbf{Class of 2021}
+
+    \section{\mysidestyle Personal\\Projects}
+
+    \textbf{Indian Railways Application} \vspace{2mm}\\\vspace{1mm}%
+    \textsl{Developer} \hfill \textbf{January 2017}\\
+    Developed an Android Application in Java that lets users get live information about their ticket, train status/schedule, seat availability, and more. The application is not official and has not been released in the app store. I created the application to learn about android development, REST APIs, and material design.
+
+    \begin{itemize}
+    \item Implemented OkHttp to make network requests to a REST API. Used Card Views to display the information, making the UI compact and more appealing.
+    \item Implemented train name/number and station code autocomplete. Here, the application sends requests to a REST API containing the partial information the user has put in, and displays a list of trains/stations with matching information to choose from.
+    \item Used material design principles to create a clean and simple UI.
+    \end{itemize}
+
+    \textbf{Indian Blood Banks Application}\vspace{2mm}\\\vspace{1mm}%
+    \textsl{Developer} \hfill \textbf{December 2016}\\
+    Created an Android Application in Java that lets users find blood banks by district or state. The application contains information for 2900+ blood banks, and provides address, contact information, and more. The application is not official and has not yet been released in the app store. I developed the application to learn about SQLite databases.
+
+    \begin{itemize}
+    \item Retrieved the blood banks information from the Indian Open Government Data Platform. Created an SQLite database using the information, and made a simple application that queries data from that SQLite database.
+    \item Created spinners with state and district names for making queries. Since the number of districts was quite large (around 700), and manually inputting the district names to a string-array for the spinners seemed tedious, I wrote a function in Java that took the district names as csv and returned them as items in a string-array.
+    \item Used material design principles to create a clean and simple UI.
+    \end{itemize}
+
+    \textbf{Personal Website}\vspace{2mm}\\\vspace{1mm}%
+    \textsl{Developer, manaspande.com} \hfill \textbf{December 2016}\\
+    Created a personal website to link to my GitHub, e-mail, and resume. Made the website responsive using CSS flexbox, and used FontAwesome for the icons.
+
+    \section{\mysidestyle Programming\\Experience}
+
+    \emph{Languages:} Java, Python, HTML, CSS, JavaScript, PHP, SQL, \LaTeX, Racket \\
+    \emph{Libraries/Frameworks:} jQuery, OkHttp, Volley, BootStrap
+    \\
+    \emph{Concepts:} Mobile UI/UX, REST APIs, OOP, JSON, Networking, Databases
+    \\
+    \emph{Tools:} Git, Android Studio
+    \\
+    \emph{Data Technology:} MySQL
+\vspace{-2mm}
+
+\end{resume}
+\end{document}
