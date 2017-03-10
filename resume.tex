@@ -1,54 +1,114 @@
-\documentclass[margin,line]{resume}
-\usepackage[hidelinks]{hyperref}
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\voffset}{0.1in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\paperheight}{11in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{11in}
+\setlength{\textheight}{9.5in}
+\setlength{\topmargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\topskip}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+%-----------------------------------------------------------
+%\usepackage{fullpage}
+\usepackage{shading}
+\usepackage{enumitem}
+%\textheight=9.0in
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \parashade[.9]{sharpcorners}{\textbf{#1 \vphantom{p\^{E}}}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
 
 \begin{document}
-\name{\Huge Manas Pande}
-\begin{resume}
-    \section{\mysidestyle Contact\\Information}
 
-    Phone: (519) 781-4944       \hfill GitHub: \url{https://github.com/mpande1998} \\
-    \noindent Email: mpande@uwaterloo.ca  \hfill Website: \url{http://manaspande.com} \vspace{0mm}\\\vspace{-4.5mm}
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Manas Pande}  & 519-781-4944\\
+34 Columbia Street West &  mpande@uwaterloo.ca \\
+Waterloo, ON N2L 3K5 & http://www.manaspande.com\\ 
+& https://github.com/mpande1998\\
+\end{tabular*}
+\\
 
-    \section{\mysidestyle Education}
+\vspace{0.1in}
 
-    \textbf{University of Waterloo}, Waterloo, ON \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Bachelor of Computer Science, Co-op} \hfill \textbf{Class of 2021}
+\resheading{Personal Projects}
+\begin{itemize}
+\item
+	\ressubheading{Indian Railways Application}{\textit{In Development}}{GitHub: https://goo.gl/Hjlrl3}{}
+	\begin{itemize}
+		\resitem{Android application that lets users get live information about their ticket, train status, seat availability, and more.}
+		\resitem{Used OkHttp to make network requests to a REST API.}
+		\resitem{Implemented train name, number and station code auto-complete; the app sends requests to a REST API with the partial user input and displays matching results.}
+		\resitem{Adhered to the Material Design guidelines:
+		\begin{itemize}[label={--}]
+			\resitem{Used CoordinatorLayout, Material theme, and Roboto.}
+			\resitem{Applied custom animations -- touch feedback, activity transitions.}
+		\end{itemize}}
+		\resitem{See demo on Vimeo: https://goo.gl/nMIo4l}
+	\end{itemize}
 
-    \section{\mysidestyle Personal\\Projects}
+\item
+	\ressubheading{Find Blood Banks India}{\textit{December 2016}}{GitHub: https://goo.gl/L0l9Ki}{}
+	\begin{itemize}
+		\resitem{Android application that lets users find blood banks by state and district.}
+		\resitem{Contains data for 2900+ blood banks; provides address, contact information, and more.}
+		\resitem{Created an SQLite database with the information, and made an application that queries data from that database.}
+		\resitem{Used ExpandableRecyclerView to display the results, making the UI compact.}
+		\resitem{See demo on YouTube: https://goo.gl/MNNNeq}
+	\end{itemize}
 
-    \textbf{Indian Blood Banks Application}\vspace{2mm}\\\vspace{1mm}%
-    \textsl{Developer} \hfill \textbf{December 2016}\\
-    Created an Android Application in Java that lets users find blood banks by district or state. The application contains data for more than 2900 blood banks, and provides address, contact information, and more. The application is not official and has not yet been released in the app store. I developed the application to learn about android development, SQLite databases, RecyclerViews, CardViews, and the Google Maps API.
+\item
+	\ressubheading{Personal Website}{\textit{December 2016}}{GitHub: https://goo.gl/QRu6Tn}{}
+	\begin{itemize}
+		\resitem{Personal website in HTML, CSS, and Javascript with links to my GitHub, e-mail, and resume.}
+		\resitem{Made the website responsive using CSS Flexbox, and ensured that it is mobile-friendly.}
+	\end{itemize}
 
-    \begin{itemize}
-    \item Retrieved the blood banks information from the Indian Open Government Data Platform. Created an SQLite database using the information, and made a simple application that queries data from that SQLite database.
-    \item Used spinners (with state and district names) for making queries. Since the number of districts was quite large (around 700), and manually inputting the district names to a string-array for the spinners seemed tedious, I wrote a function in Java that took the district names as csv and returned them as items in a string-array.
-    \item Displayed the results in CardViews. Used Google Maps API Geocoder to mark the addresses on a map. Used some material design principles to create a clean UI.
-    \end{itemize}
+\end{itemize}
 
-    \textbf{Indian Railways Application} \vspace{2mm}\\\vspace{1mm}%
-    \textsl{Developer} \hfill \textbf{January 2017}\\
-    Developed an Android Application in Java that lets users get live information about their ticket, train status/schedule, seat availability, and more. The application is not official and has not been released in the app store. I created the application primarily to learn how to work with REST APIs, JSON server responses, AsyncTasks, and material design.
+\resheading{Skills}
 
-    \begin{itemize}
-    \item Used OkHttp to make network requests to a REST API. Used CardViews to display the information, making the UI compact and more appealing.
-    \item Implemented train name/number and station code auto-complete. Here, the application sends requests to a REST API containing the partial information the user has put in and displays a list of matching trains/stations to choose from. The performance here is not very decent since the API sometimes takes a long time to respond.
-    \item Learned how to work with JSON server responses, and used material design principles to create a simple UI.
-    \end{itemize}
+\begin{description}
+\item[Languages:]
+Java, Python, HTML, CSS, JavaScript, Racket
+\item[Libraries/Frameworks:]
+jQuery, OkHttp, ButterKnife, Volley, BootStrap
+\item[Technologies:]
+Git, Android Studio, MySQL, \LaTeX
+\item[Concepts:]
+Mobile UI/UX, REST APIs, OOP, JSON, Networking, Databases
+\end{description}
 
-    \textbf{Personal Website}\vspace{2mm}\\\vspace{1mm}%
-    \textsl{Developer, manaspande.com} \hfill \textbf{December 2016}\\
-    Created a personal website using HTML, CSS, and JavaScript to link to my GitHub, e-mail, and resume. Made the website responsive using CSS flexbox, and used FontAwesome for the icons. Also made sure that the website is mobile-friendly.
+\resheading{Education}
+\begin{itemize}
+\item
+	\ressubheading{University of Waterloo}{Waterloo, ON}{B.A.Sc., Computer Science, Co-op}{Class of 2021}
 
-    \section{\mysidestyle Programming\\Experience}
+\end{itemize}
 
-    \emph{Languages:} Java, Python, HTML, CSS, JavaScript, PHP, Racket \\
-    \emph{Libraries/Frameworks:} jQuery, OkHttp, Volley, BootStrap
-    \\
-    \emph{Technologies:} Git, Android Studio, MySQL, \LaTeX
-    \\
-    \emph{Concepts:} Mobile UI/UX, REST APIs, OOP, JSON, Networking, Databases
-\vspace{-2mm}
-
-\end{resume}
 \end{document}
