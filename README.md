@@ -1,3 +1,3 @@
 # Resume
 
-resume.cls is a very nice template I found online; see the source for license/attribution.
+This is the resume template I am currently using. I found this template online at http://www.davidgrant.ca/latex_resume_template
